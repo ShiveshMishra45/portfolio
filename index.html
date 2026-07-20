@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivesh Kumar Mishra — Software Developer &amp; IT Support</title>
+<meta name="description" content="CV of Shivesh Kumar Mishra — Software Developer & IT Support, Shangrila Development Bank">
+<style>
+  :root{
+    --bg: #0b1116;
+    --panel: #101820;
+    --panel-border: #1f2b35;
+    --text: #dce4ea;
+    --muted: #7c8ea1;
+    --accent: #4fd1c5;
+    --accent-soft: rgba(79, 209, 197, 0.12);
+    --amber: #e0a458;
+    --mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(79,209,197,0.06), transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(224,164,88,0.05), transparent 35%);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 24px 90px;
+  }
+
+  /* ---------- Terminal header ---------- */
+  .terminal {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px -30px rgba(0,0,0,0.7);
+    margin-bottom: 48px;
+  }
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: #0d1620;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dot.red { background: #e5645a; }
+  .dot.yellow { background: #e6b450; }
+  .dot.green { background: #58c07c; }
+  .terminal-title {
+    margin-left: 10px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .terminal-body {
+    padding: 28px 30px 32px;
+    font-family: var(--mono);
+  }
+  .prompt-line {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+  .prompt-line .sym { color: var(--accent); }
+  .whoami-name {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: #fff;
+    margin: 10px 0 4px;
+    letter-spacing: -0.02em;
+    font-family: var(--sans);
+  }
+  .whoami-role {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 22px;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .contact-row span::before {
+    content: "";
+  }
+  .contact-row a { color: var(--text); }
+  .contact-row a:hover { color: var(--accent); }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 46px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-num {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 13px;
+  }
+  .section-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .section-head::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--panel-border);
+  }
+
+  .summary {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 68ch;
+  }
+  .summary strong { color: var(--text); font-weight: 600; }
+
+  /* ---------- Cards (experience / projects / education) ---------- */
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .card:last-child { margin-bottom: 0; }
+
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 3px;
+  }
+  .card-title { font-size: 16px; font-weight: 600; color: #fff; }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .card-org { color: var(--amber); font-size: 13.5px; font-weight: 500; margin-bottom: 12px; }
+
+  ul.bullets { margin: 0; padding-left: 18px; }
+  ul.bullets li { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+  ul.bullets li::marker { color: var(--accent); }
+  ul.bullets li strong { color: var(--text); }
+
+  .proj-desc { color: var(--muted); font-size: 14px; }
+
+  /* ---------- Skills ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+  }
+  .skill-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .skill-card h4 {
+    margin: 0 0 10px;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pill {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--text);
+    background: #0d1620;
+    border: 1px solid var(--panel-border);
+    padding: 4px 10px;
+    border-radius: 5px;
+  }
+  .pill.accent { border-color: rgba(79,209,197,0.4); color: var(--accent); }
+
+  /* ---------- Education / Certs ---------- */
+  .edu-item { margin-bottom: 16px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-degree { font-size: 15px; font-weight: 600; color: #fff; }
+  .edu-school { font-size: 13.5px; color: var(--amber); margin-top: 2px; }
+  .edu-date { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .cert-list { display: flex; flex-direction: column; gap: 10px; }
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .cert-item::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 700;
+    font-family: var(--mono);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--panel-border);
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 34px 16px 60px; }
+    .terminal-body { padding: 22px 18px 26px; }
+    .card { padding: 16px 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="terminal">
+    <div class="terminal-bar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">shivesh@resume:~</span>
+    </div>
+    <div class="terminal-body">
+      <div class="prompt-line"><span class="sym">$</span> whoami</div>
+      <div class="whoami-name">Shivesh Kumar Mishra</div>
+      <div class="whoami-role">Software Developer &amp; IT Support</div>
+      <div class="prompt-line"><span class="sym">$</span> cat contact.txt</div>
+      <div class="contact-row">
+        <span>📍 Kathmandu, Nepal</span>
+        <span>✉ <a href="mailto:s.ravimishra45@gmail.com">s.ravimishra45@gmail.com</a></span>
+        <span>☎ +977 9869695472</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <section aria-label="Profile">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <span class="section-title">Profile</span>
+    </div>
+    <p class="summary">
+      IT professional with hands-on experience in <strong>software development</strong>,
+      <strong>database management</strong>, and <strong>IT support</strong> within the banking sector.
+      Builds internal business applications with Python and Django, manages MySQL and MS SQL Server
+      databases, and provides L1-level network support across Cisco and Fortinet infrastructure.
+      Comfortable across the full stack — from writing the application to deploying it and keeping
+      the network it runs on healthy.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section aria-label="Work Experience">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <span class="section-title">Work Experience</span>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <span class="card-title">Software Developer / IT Support</span>
+        <span class="card-date">Dec 2024 — Present</span>
+      </div>
+      <div class="card-org">Shangrila Development Bank · IT Department</div>
+      <ul class="bullets">
+        <li>Develop and maintain internal software applications using <strong>Python</strong> and <strong>Django</strong>.</li>
+        <li>Administer and maintain databases (<strong>MySQL</strong>, <strong>MS SQL Server</strong>) supporting core banking systems.</li>
+        <li>Provide IT support across departments — hardware, software, and network-related issues.</li>
+        <li>Perform L1-level network troubleshooting on <strong>Cisco</strong> and <strong>Fortinet</strong> routers.</li>
+        <li>Design and deploy internal systems for staff transfer, document management, and grievance handling.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section aria-label="Projects">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <span class="section-title">Projects</span>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-title">User Management System</span></div>
+      <div class="card-org">Shangrila Development Bank</div>
+      <p class="proj-desc">Enables bank staff to manage and process their own records during transfers from one branch to another, reducing manual paperwork and turnaround time.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-title">Document Management System</span></div>
+      <div class="card-org">Shangrila Development Bank</div>
+      <p class="proj-desc">A centralized platform for uploading and managing memos, circulars, and policy documents, improving accessibility and version control across branches.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="card-title">Grievance Handling System</span></div>
+      <div class="card-org">Shangrila Development Bank</div>
+      <p class="proj-desc">An internal portal allowing staff to submit and track workplace complaints or grievances, ensuring issues are logged and routed for resolution.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section aria-label="Skills">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <span class="section-title">Skills</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Programming &amp; Web</h4>
+        <div class="pill-row">
+          <span class="pill accent">Python</span>
+          <span class="pill accent">Django</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Databases</h4>
+        <div class="pill-row">
+          <span class="pill">MySQL</span>
+          <span class="pill">MS SQL Server</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Data &amp; Analytics</h4>
+        <div class="pill-row">
+          <span class="pill">Pandas</span>
+          <span class="pill">NumPy</span>
+          <span class="pill">Tableau</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Networking (L1 Support)</h4>
+        <div class="pill-row">
+          <span class="pill">Cisco Router</span>
+          <span class="pill">Fortinet Router</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Systems &amp; Deployment</h4>
+        <div class="pill-row">
+          <span class="pill">Kali Linux</span>
+          <span class="pill">IIS (Web Deployment)</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Languages Spoken</h4>
+        <div class="pill-row">
+          <span class="pill">Nepali — Native</span>
+          <span class="pill">English — Professional</span>
+          <span class="pill">Maithili — Native</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section aria-label="Education">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <span class="section-title">Education</span>
+    </div>
+    <div class="card">
+      <div class="edu-item">
+        <div class="edu-degree">Bachelor of Computer Application (BCA)</div>
+        <div class="edu-school">Himalayan College for Learning Excellence, Kathmandu, Nepal</div>
+        <div class="edu-date">2019 — 2024</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Higher Secondary Education (+2), Science</div>
+        <div class="edu-school">Rajarshi Janak Secondary School, Janakpur, Dhanusha, Nepal</div>
+        <div class="edu-date">2016 — 2019</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">Secondary Level Education</div>
+        <div class="edu-school">Shree Adhunik Rastriya Higher Secondary School, Hetauda-4, Nepal</div>
+        <div class="edu-date">2015 — 2016</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section aria-label="Certifications">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <span class="section-title">Certifications</span>
+    </div>
+    <div class="card">
+      <div class="cert-list">
+        <div class="cert-item">Certification in Python Programming</div>
+        <div class="cert-item">Certification in Django Web Framework</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Last updated · 2026 · Built with HTML &amp; CSS
+  </footer>
+
+</div>
+</body>
+</html>
