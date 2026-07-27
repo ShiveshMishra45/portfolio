@@ -36,39 +36,20 @@
   body {
     margin: 0;
     position: relative;
-    background-color: #05070c;
+    background-color: #04070a;
     background-image:
-      radial-gradient(circle at 50% 0%, rgba(5,7,12,0.25), rgba(5,7,12,0.7) 55%, rgba(5,7,12,0.94) 100%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='150'%3E%3Cdefs%3E%3ClinearGradient id='m' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236db3ec'/%3E%3Cstop offset='0.5' stop-color='%23214f82'/%3E%3Cstop offset='1' stop-color='%230a1b30'/%3E%3C/linearGradient%3E%3ClinearGradient id='gl' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237ad4ff' stop-opacity='0.5'/%3E%3Cstop offset='0.5' stop-color='%230e2036' stop-opacity='0.88'/%3E%3Cstop offset='1' stop-color='%23020509' stop-opacity='0.95'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='150' fill='%2303050a'/%3E%3Crect x='8' y='8' width='126' height='126' rx='22' fill='url(%23m)'/%3E%3Crect x='8' y='8' width='126' height='126' rx='22' fill='none' stroke='%233b7ab8' stroke-width='1.5' opacity='0.8'/%3E%3Cellipse cx='46' cy='40' rx='30' ry='17' fill='%23d3edff' opacity='0.32'/%3E%3Crect x='166' y='8' width='126' height='126' rx='22' fill='url(%23gl)'/%3E%3Crect x='166' y='8' width='126' height='126' rx='22' fill='none' stroke='%2364c8ff' stroke-width='1.5' opacity='0.75'/%3E%3Crect x='192' y='28' width='66' height='46' rx='8' fill='%23000a14' opacity='0.5'/%3E%3Cellipse cx='200' cy='36' rx='18' ry='10' fill='%23d3edff' opacity='0.4'/%3E%3C/svg%3E");
-    background-size: auto, 300px 150px;
-    background-position: center, 0 0;
-    background-attachment: fixed, fixed;
-    background-repeat: no-repeat, repeat;
-    animation: tile-drift 50s linear infinite;
+      repeating-linear-gradient(0deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 2px, rgba(1,167,225,0.035) 3px, rgba(0,0,0,0) 4px),
+      radial-gradient(circle at 50% 0%, rgba(4,8,12,0.2), rgba(4,8,12,0.75) 55%, rgba(4,8,12,0.95) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='150'%3E%3Ctext x='6' y='22' font-family='monospace' font-size='15' fill='%2301a7e1' opacity='0.16'%3Eroot%40kali:~$%3C/text%3E%3Ctext x='6' y='46' font-family='monospace' font-size='15' fill='%2339ff6a' opacity='0.13'%3Edrwxr-xr-x 5%3C/text%3E%3Ctext x='6' y='70' font-family='monospace' font-size='15' fill='%23a855f7' opacity='0.14'%3E0x4F3A 0x1AE9%3C/text%3E%3Ctext x='6' y='94' font-family='monospace' font-size='15' fill='%2301a7e1' opacity='0.13'%3Esudo systemctl%3C/text%3E%3Ctext x='6' y='118' font-family='monospace' font-size='15' fill='%2339ff6a' opacity='0.12'%3E01001011 10%3C/text%3E%3Ctext x='6' y='142' font-family='monospace' font-size='15' fill='%23a855f7' opacity='0.13'%3E/usr/bin/env%3C/text%3E%3C/svg%3E");
+    background-size: 100% 4px, auto, 260px 150px;
+    background-position: 0 0, center, 0 0;
+    background-attachment: fixed, fixed, fixed;
+    background-repeat: repeat, no-repeat, repeat;
     color: var(--text);
     font-family: var(--sans);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  @keyframes tile-drift { from { background-position: center, 0 0; } to { background-position: center, 300px 150px; } }
-
-  body::before, body::after {
-    content: ""; position: fixed; z-index: -1; pointer-events: none;
-    width: 60vw; height: 60vw; max-width: 900px; max-height: 900px;
-    border-radius: 50%; filter: blur(10px);
-  }
-  body::before {
-    left: -12%; bottom: -18%;
-    background: radial-gradient(circle, rgba(1,167,225,0.20), transparent 68%);
-    animation: drift1 22s ease-in-out infinite alternate;
-  }
-  body::after {
-    right: -14%; top: -16%;
-    background: radial-gradient(circle, rgba(168,85,247,0.18), transparent 68%);
-    animation: drift2 26s ease-in-out infinite alternate;
-  }
-  @keyframes drift1 { from { transform: translate(0,0) scale(1); } to { transform: translate(6%, -6%) scale(1.12); } }
-  @keyframes drift2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-6%, 6%) scale(1.1); } }
 
   a { color: var(--signal); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -445,6 +426,13 @@
         <div class="pill-row">
           <span class="pill">Cisco Router</span>
           <span class="pill">FortiGate</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Identity &amp; Directory Services</h4>
+        <div class="pill-row">
+          <span class="pill">Active Directory</span>
+          <span class="pill">LDAP</span>
         </div>
       </div>
       <div class="skill-card security">
